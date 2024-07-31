@@ -26,7 +26,7 @@ cp env.example.json env.dev.json
 serverless deploy --stage dev
 ```
 
-This will return a URL for the deployment. You can then follow the directions in [https://docs.kibocommerce.com/help/event-subscription](https://docs.kibocommerce.com/help/event-subscription] to set up this endpoint as a listener for the event subscriptions you desire.
+This will return a URL for the deployment. You can then follow the directions in [https://docs.kibocommerce.com/help/event-subscription](https://docs.kibocommerce.com/help/event-subscription) to set up this endpoint as a listener for the event subscriptions you desire.
 
 To follow the example here, enable the `shipment.workflowstatechanged` event.
 
