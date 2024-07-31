@@ -1,0 +1,21 @@
+service: kibo-slack-alerts
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs18.x
+  environment:
+    SLACK_WEBHOOK_URL: ${file(env.${opt:stage}.json):SLACK_WEBHOOK_URL}
+    KIBO_DEMO_TENANT: ${file(env.${opt:stage}.json):KIBO_DEMO_TENANT}
+
+functions:
+  handler:
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: /
+          method: post
+
+plugins:
+  - serverless-plugin-typescript
